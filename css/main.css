@@ -5,17 +5,30 @@ font-family: 'Lato', sans-serif; */
 /* -------------------- SHARED STYLES -------------------- */
 
 /* Fonts - Cabin */
-nav li a, .value  {
+nav li a, 
+.value, 
+.get-started h3,
+.categories .container .column.get-started a  {
     font-family: 'Cabin', sans-serif;
 }
 
 /* Fonts - Playfair */
-.hero h1, .hero h2{
+.hero h1, 
+.hero h2{
     font-family: 'Playfair Display', serif;
 }
 
 /* Fonts - Lato */
-.hero p, .hero h3, .value-description, .sign-up h3, .sign-up p, footer a, footer p, .sign-up form .button-primary {
+.hero p, 
+.hero h3, 
+.value-description, 
+.sign-up h3, 
+.sign-up p, 
+footer a, 
+footer p, 
+.sign-up form 
+.button-primary,
+.get-started p {
     font-family: 'Lato', sans-serif;
 }
 
@@ -113,31 +126,52 @@ nav li a:hover {
 }
 
 /* -------------------- STEPS -------------------- */
-/* .steps {
-    overflow: auto;
-} */
 
 .categories, 
 .steps li {
     height: 100vh;
 } 
 
-/* .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding-top: 102px;
-} */
-
-.steps li{
-    position: sticky;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;
-    padding-top: 50vh;
+.get-started,
+.steps li {
+    margin-top: 50vh;
 }
+
+.categories {
+    margin-bottom: 105px;
+    margin-top: 84px;
+}
+
+.categories .container {
+    background-image: linear-gradient(to right, #F1EFEA , #ECEAE7);
+}
+
+.get-started h3 {
+    font-size: 28px;
+}
+
+.get-started p {
+    font-size: 22px;
+}
+
+.categories .container .column.get-started a{
+    background-color: transparent;
+    border: 1px solid #FA7165;
+    border-radius: 10px;
+    color: #FA7165;
+    font-size: 16px;
+}
+
+.steps {
+    background-image: linear-gradient(to right, #F3F3F2 , #E5E5E5);
+    opacity: 32%;
+    -moz-box-shadow:    0 6px 15px 0 #ccc;
+    -webkit-box-shadow: 0 6px 15px 0 #ccc;
+    box-shadow:         0 6px 15px 0 #ccc;
+}
+
+
+
 
 
 /* -------------------- SIGN-UP -------------------- */
