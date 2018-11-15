@@ -8,13 +8,15 @@ font-family: 'Lato', sans-serif; */
 nav li a, 
 .value, 
 .get-started h3,
-.categories .container .column.get-started a  {
+.categories .container .column.get-started a {
     font-family: 'Cabin', sans-serif;
 }
 
 /* Fonts - Playfair */
 .hero h1, 
-.hero h2{
+.hero h2,
+.steps h3,
+.steps li:before {
     font-family: 'Playfair Display', serif;
 }
 
@@ -28,7 +30,8 @@ footer a,
 footer p, 
 .sign-up form 
 .button-primary,
-.get-started p {
+.get-started p,
+.steps p {
     font-family: 'Lato', sans-serif;
 }
 
@@ -126,15 +129,14 @@ nav li a:hover {
 }
 
 /* -------------------- STEPS -------------------- */
-
-.categories, 
+ 
 .steps li {
     height: 100vh;
 } 
 
 .get-started,
 .steps li {
-    margin-top: 50vh;
+    margin-top: 40vh;
 }
 
 .categories {
@@ -142,12 +144,17 @@ nav li a:hover {
     margin-top: 84px;
 }
 
-.categories .container {
+.categories .container, .categories {
     background-image: linear-gradient(to right, #F1EFEA , #ECEAE7);
+}
+
+.get-started {
+    z-index: 2;
 }
 
 .get-started h3 {
     font-size: 28px;
+    font-weight: 600;
 }
 
 .get-started p {
@@ -165,14 +172,39 @@ nav li a:hover {
 .steps {
     background-image: linear-gradient(to right, #F3F3F2 , #E5E5E5);
     opacity: 32%;
-    -moz-box-shadow:    0 6px 15px 0 #ccc;
-    -webkit-box-shadow: 0 6px 15px 0 #ccc;
-    box-shadow:         0 6px 15px 0 #ccc;
+    -moz-box-shadow:    inset 0 6px 15px 0 #ccc;
+    -webkit-box-shadow: inset 0 6px 15px 0 #ccc;
+    box-shadow:         inset 0 6px 15px 0 #ccc;
+    padding: 0 50px 0 50px;
+    text-align: center;
 }
 
+.steps h3 {
+    font-size: 22px;
+    font-weight: 900;
+}
 
+.steps p {
+    font-size: 18px;
+}
 
+.steps ol {
+    list-style: none;
+    counter-reset: item;
+  }
 
+.steps li {
+    counter-increment: item;
+}
+
+.steps li:before {
+    content: counter(item);
+    color: #FA7165;
+    font-size: 42px;
+    font-weight: 900;
+    text-align: center;
+    display: inline-block;
+}
 
 /* -------------------- SIGN-UP -------------------- */
 .sign-up h3, .sign-up p {
