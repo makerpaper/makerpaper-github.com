@@ -36,9 +36,19 @@ footer p,
 }
 
 /* -------------------- BACKGROUND -------------------- */
-html {
+/* html {
     background: url("../img/makerpaper-bg.png") no-repeat center center fixed;
+} */
+/* 
+html,body {
+    background: url("../img/makerpaper-bg.png") no-repeat center center fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;   
+    -o-background-size: cover;      
+    background-size: cover;     
 }
+ */
+
 
 /* -------------------- NAVIGATION -------------------- */
 nav {
@@ -46,6 +56,10 @@ nav {
     padding: 30px;
     box-shadow: 0px 0px 8px 2px #ebebeb;
     margin-bottom: 110px;
+}
+
+nav .logo {
+    z-index: 2;
 }
 
 nav ul {
@@ -76,6 +90,78 @@ nav li a:hover {
     color: #FA7165;
     text-decoration: underline;
     text-decoration-style: wavy;
+}
+
+/* -------------------- SVGs -------------------- */
+
+body {
+    position: relative;
+}
+
+.blob1, .blob2, .blob3, .blob4, .blob5, .blob6, .blob7, .blob8, .blob9, .blob10, .blob11, .blob12 {
+    position: absolute;
+}
+
+.blob1 {
+    top: 0;
+    left: 0;
+}
+
+.blob2 {
+    top: 165px;
+    right: 0;
+}
+
+.blob3 {
+    top: 440px;
+    left: 100px;
+}
+
+.blob4 {
+    top: 580px;
+    left: 0;
+}
+
+.blob5 {
+    top: 620px;
+    right: 120px;
+}
+
+.blob6 {
+    top: 1260px;
+    left: 90px;
+}
+
+.blob7 {
+    bottom: 770px;
+    left: 0;
+}
+
+.blob8 {
+    bottom: 870px;
+    right: 60px;
+}
+
+.blob9 {
+    bottom: 360px;
+    left: 110px;
+}
+
+.blob10 {
+    bottom: 300px;
+    right: 0;
+}
+
+.blob11 {
+    bottom: 52px;
+    left: 0;
+    z-index: -1;
+}
+
+.blob12 {
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
 
 /* -------------------- HERO -------------------- */
@@ -193,12 +279,9 @@ nav li a:hover {
     counter-reset: item;
   }
 
-.steps li {
-    counter-increment: item;
-}
-
 .steps li:before {
-    content: counter(item);
+    counter-increment: item;
+    content: counter(item) ". ";
     color: #FA7165;
     font-size: 42px;
     font-weight: 900;
