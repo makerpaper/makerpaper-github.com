@@ -215,19 +215,12 @@ body {
 }
 
 /* -------------------- STEPS -------------------- */
- 
-.steps li {
-    height: 100vh;
-} 
-
-.get-started,
-.steps li {
-    margin-top: 40vh;
-}
 
 .categories {
     margin-bottom: 105px;
     margin-top: 84px;
+    padding: 50px 0 50px 0;
+    text-align: center;
 }
 
 .categories .container, .categories {
@@ -235,7 +228,8 @@ body {
 }
 
 .get-started {
-    z-index: 2;
+    z-index: 2;  
+    margin-bottom: 30px;
 }
 
 .get-started h3 {
@@ -255,14 +249,36 @@ body {
     font-size: 16px;
 }
 
-.steps {
-    background-image: linear-gradient(to right, #F3F3F2 , #E5E5E5);
-    opacity: 32%;
-    -moz-box-shadow:    inset 0 6px 15px 0 #ccc;
-    -webkit-box-shadow: inset 0 6px 15px 0 #ccc;
-    box-shadow:         inset 0 6px 15px 0 #ccc;
-    padding: 0 50px 0 50px;
-    text-align: center;
+@media (min-width: 550px) {
+
+    .categories {
+        padding: 0;
+    }
+
+    .steps li {
+        height: 100vh;
+    } 
+
+    .get-started,
+    .steps li {
+        margin-top: 40vh;
+    }
+
+    .get-started {
+        text-align: left;
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .steps {
+        background-image: linear-gradient(to right, #F3F3F2 , #E5E5E5);
+        opacity: 32%;
+        -moz-box-shadow:    inset 0 6px 15px 0 #ccc;
+        -webkit-box-shadow: inset 0 6px 15px 0 #ccc;
+        box-shadow:         inset 0 6px 15px 0 #ccc;
+        padding: 0 50px 0 50px;
+        text-align: center;
+    }
 }
 
 .steps h3 {
@@ -384,6 +400,10 @@ footer a {
     text-decoration: none;
     color: #3A3A3C;
     font-size: 18px;
+}
+
+footer svg {
+    margin-left: 15px;
 }
 
 .links a:nth-child(1) {
