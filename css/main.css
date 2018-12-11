@@ -155,6 +155,7 @@ body {
 .blob7 {
     bottom: 770px;
     left: 0;
+    z-index: 1;
 }
 
 .blob8 {
@@ -182,6 +183,12 @@ body {
     bottom: 0;
     right: 0;
     z-index: -1;
+}
+
+@media screen and (max-width: 550px) {
+    .blob2, .blob3, .blob7, .blob9, .blob10 {
+        display: none;
+    }
 }
 
 /* -------------------- HERO -------------------- */
@@ -215,6 +222,8 @@ body {
 /* -------------------- VALUES -------------------- */
 .svg-card {
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 .value, .value-description {
@@ -224,10 +233,12 @@ body {
 
 .value {
     font-weight: 400;
+    margin-bottom: 7px;
 }
 
 .value-description {
     font-weight: 300;
+    margin-bottom: 36px;
 }
 
 .descriptions {
@@ -253,13 +264,9 @@ body {
     text-align: center;
 }
 
-.categories .container, .categories {
+.categories .container, 
+.categories {
     background-image: linear-gradient(to right, #F1EFEA , #ECEAE7);
-}
-
-.get-started {
-    z-index: 2;  
-    margin-bottom: 30px;
 }
 
 .get-started h3 {
@@ -285,23 +292,23 @@ body {
         padding: 0;
     }
 
-    .steps li {
-        height: 100vh;
+    .steps li, .get-started {
+        margin-top: 40vh;
     } 
 
-    .get-started,
     .steps li {
-        margin-top: 40vh;
-    }
+        height: 50vh;
+    } 
 
     .get-started {
         text-align: left;
         border-bottom: 0;
         margin-bottom: 0;
+        padding-bottom: 25vh;
     }
 
     .steps {
-        background-image: linear-gradient(to right, #F3F3F2 , #E5E5E5);
+        background-image: linear-gradient(to bottom, #F3F3F2 , #f4f4f3);
         opacity: 32%;
         -moz-box-shadow:    inset 0 6px 15px 0 #ccc;
         -webkit-box-shadow: inset 0 6px 15px 0 #ccc;
@@ -369,7 +376,7 @@ body {
 
 @media screen and (min-width: 777px) {
     .sign-up form {
-        max-width: 65%;
+        max-width: 47%;
     }
 }
 
@@ -413,6 +420,11 @@ body {
     transition: ease .4s;
 }
 
+@media screen and (max-width: 530px) {
+    .sign-up form .button-primary {
+        max-width: 100%;
+    }
+}
 /* -------------------- FOOTER -------------------- */
 
 footer {
@@ -455,4 +467,11 @@ footer svg {
     .links a:nth-child(1) {
         margin-right: 45px;
     }
+}
+
+@media screen and (max-width: 530px) {
+    footer p {
+        display: none;
+    }
+
 }

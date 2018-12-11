@@ -1,5 +1,8 @@
-$(".get-started").stick_in_parent();
-
+if($(window).width() >= 820){
+    $(".get-started").stick_in_parent();
+    // $('.get-started').css('position', 'absolute');
+    // $('.get-started').css('bottom', '500px');
+}
 
 // function checkPosition() {
 //     if (window.matchMedia('(min-width: 865px)').matches) {
