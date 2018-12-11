@@ -245,6 +245,12 @@ body {
     margin-top: 60px;
 }
 
+.values img {
+    -moz-box-shadow: -6px 6px 17px 0 #ccc;
+    -webkit-box-shadow: -6px 6px 17px 0 #ccc;
+    box-shadow: -6px 6px 17px 0 #ccc;
+}
+
 .values .descriptions {
     text-align: center;
 }
