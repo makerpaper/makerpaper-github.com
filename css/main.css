@@ -148,7 +148,7 @@ body {
 }
 
 .blob6 {
-    top: 1260px;
+    top: 1160px;
     left: 90px;
 }
 
@@ -304,13 +304,17 @@ body {
 
     .steps li {
         height: 50vh;
-    } 
+    }
+    
+    .steps li:nth-child(3) {
+        margin-bottom: 18vh;
+    }
 
     .get-started {
         text-align: left;
         border-bottom: 0;
         margin-bottom: 0;
-        padding-bottom: 25vh;
+        padding-bottom: 35vh;
     }
 
     .steps {
@@ -327,6 +331,7 @@ body {
 .steps h3 {
     font-size: 22px;
     font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .steps p {
@@ -442,6 +447,7 @@ footer {
 footer p {
     font-size: 14px;
     color: #3A3A3C; 
+    margin-bottom: 0;
 }
 
 footer a {
@@ -450,13 +456,13 @@ footer a {
     font-size: 18px;
 }
 
-footer svg {
+/* footer svg {
     margin-left: 15px;
 }
 
 .links a:nth-child(1) {
     margin-right: 20px;
-}
+} */
 
 @media screen and (min-width: 530px) {
     footer {
@@ -470,9 +476,9 @@ footer svg {
         right: 40px;
     }
 
-    .links a:nth-child(1) {
+    /* .links a:nth-child(1) {
         margin-right: 45px;
-    }
+    } */
 }
 
 @media screen and (max-width: 530px) {
