@@ -62,10 +62,6 @@ nav {
     margin-bottom: 110px;
 }
 
-nav .logo {
-    z-index: 2;
-}
-
 nav ul {
     position: absolute;
     right: 10px;
@@ -130,6 +126,7 @@ body {
 .blob1 {
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 .blob2 {
@@ -257,6 +254,8 @@ body {
     -moz-box-shadow: -6px 6px 17px 0 #ccc;
     -webkit-box-shadow: -6px 6px 17px 0 #ccc;
     box-shadow: -6px 6px 17px 0 #ccc;
+    display:block;
+    margin:auto;
 }
 
 .values .descriptions {
@@ -266,6 +265,10 @@ body {
 @media (min-width: 550px) {
     .values .descriptions {
         text-align: left;
+    }
+
+    .values img {
+        display:block;
     }
 }
 
@@ -564,7 +567,7 @@ footer a {
     text-align: center
 }
 
-@media (min-width: 550px) {
+@media (min-width: 1020px) {
     .product {
         display: flex;
         justify-content: space-between;
@@ -579,6 +582,13 @@ footer a {
 }
 .product figure {
     margin: 0;
+    text-align: center;
+}
+
+@media (min-width: 1020px) {
+    .product figure {
+        text-align: left;
+    }
 }
 
 .product figcaption a {
@@ -588,4 +598,20 @@ footer a {
     padding: 0;
     color: #c5a785;
     text-decoration: none;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.sign-up.product-sign-up h2 {
+    margin-bottom: 0
+}
+
+.product-sign-up .product-sign-up-subtext {
+    font-size: 22px;
+    width: 510px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
