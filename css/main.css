@@ -5,37 +5,39 @@ font-family: 'Lato', sans-serif; */
 /* -------------------- SHARED STYLES -------------------- */
 
 /* Fonts - Cabin */
-nav li a, 
-.value, 
+nav li a,
+.value,
 .get-started h3,
 .categories .container .column.get-started a {
     font-family: 'Cabin', sans-serif;
 }
 
 /* Fonts - Playfair */
-.hero h1, 
+.hero h1,
 .hero h2,
 .steps h3,
 .steps li:before,
-.product h2, 
-.sign-up h2 {
+.product h2,
+.sign-up h2,
+#cards .banner h1 {
     font-family: 'Playfair Display', serif;
 }
 
 /* Fonts - Lato */
-.hero p, 
-.hero h3, 
-.value-description, 
-.sign-up h3, 
-.sign-up p, 
-footer a, 
-footer p, 
-.sign-up form 
+.hero p,
+.hero h3,
+.value-description,
+.sign-up h3,
+.sign-up p,
+footer a,
+footer p,
+.sign-up form
 .button-primary,
 .get-started p,
 .steps p,
 .product p,
-.product a {
+.product a,
+#cards .banner p {
     font-family: 'Lato', sans-serif;
 }
 
@@ -43,13 +45,13 @@ footer p,
 /* html {
     background: url("../img/makerpaper-bg.png") no-repeat center center fixed;
 } */
-/* 
+/*
 html,body {
     background: url("../img/makerpaper-bg.png") no-repeat center center fixed;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover;   
-    -o-background-size: cover;      
-    background-size: cover;     
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
  */
 
@@ -198,13 +200,13 @@ body {
     text-align: center;
 }
 
-.hero h1, .sign-up h2 {
-    font-size: 48px;
+.hero h1, .sign-up h2, #cards .banner h1 {
+    font-size: 58px;
     font-weight: 900;
     margin-bottom: 50px;
 }
 
-.hero p, .product p {
+.hero p, .product p, #cards .banner p {
     font-weight: 300;
     font-size: 24px;
 }
@@ -281,7 +283,7 @@ body {
     text-align: center;
 }
 
-.categories .container, 
+.categories .container,
 .categories {
     background-image: linear-gradient(to right, #F1EFEA , #ECEAE7);
 }
@@ -311,12 +313,12 @@ body {
 
     .steps li, .get-started {
         margin-top: 40vh;
-    } 
+    }
 
     .steps li {
         height: 50vh;
     }
-    
+
     .steps li:nth-child(3) {
         margin-bottom: 18vh;
     }
@@ -477,7 +479,7 @@ footer {
 
 footer p {
     font-size: 14px;
-    color: #3A3A3C; 
+    color: #3A3A3C;
     margin-bottom: 0;
 }
 
@@ -537,7 +539,8 @@ footer a {
     font-size: 38px;
 }
 
-.product p {
+.product p,
+#cards .banner p {
     font-size: 24px;
 }
 
@@ -563,7 +566,7 @@ footer a {
     display: none;
 }
 
-#products .sign-up h2 {
+.sign-up h2 {
     text-align: center
 }
 
@@ -580,6 +583,7 @@ footer a {
         text-align: left;
     }
 }
+
 .product figure {
     margin: 0;
     text-align: center;
@@ -600,18 +604,66 @@ footer a {
     text-decoration: none;
 }
 
-.text-align-right {
-    text-align: right;
+/* -------------------- CARDS PAGE -------------------- */
+
+#cards .banner {
+    display: flex;
+    margin-bottom: 110px;
 }
 
-.sign-up.product-sign-up h2 {
-    margin-bottom: 0
+#cards .banner .text {
+    max-width: 380px;
 }
 
-.product-sign-up .product-sign-up-subtext {
+#cards nav {
+    margin-bottom: 146px;
+}
+
+#cards .banner-container {
+    position: relative;
+}
+
+#cards .banner-container img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+#cards .sign-up p {
+    max-width: 480px;
     font-size: 22px;
-    width: 510px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    margin: 0 auto 20px auto;
+}
+
+#cards #mc_embed_signup {
+    margin-top: 70px;
+}
+
+.pricing-section, #cards .banner-container {
+    border-bottom: 1px solid #D1D1D1;
+}
+
+@media (max-width: 1180px) {
+    #cards .banner-container img {
+        display: none;
+    }
+
+    #cards .banner {
+        display: block;
+        text-align: center;
+    }
+
+    #cards .banner:after {
+        display: block;
+        width: 430px;
+        height: 430px;
+        margin: 0 auto;
+        background: url('../img/products/card-mockup.png') transparent no-repeat;
+    }
+
+    #cards .banner .text {
+        margin: 0 auto;
+    }
+
 }
