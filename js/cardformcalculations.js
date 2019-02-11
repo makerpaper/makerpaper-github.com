@@ -27,28 +27,79 @@ function quantityPrice()
     //Get a reference to the number input id="quantityPrice"
     var includeQuantity = theForm.elements["quantity"].value;
     //If they checked the box set quantityPrice to 20
-    if (includeQuantity < 25){
-        quantityPrice = 0;
+
+    if (getSizePrice() === 1.35) {
+        if (includeQuantity < 25){
+            quantityPrice = 0;
+        }
+        else if (includeQuantity >= 25 && includeQuantity < 50) {
+            quantityPrice = 0.05;
+        }
+        else if (includeQuantity >= 50 && includeQuantity < 100) {
+            quantityPrice = 0.10;
+        }
+        else if (includeQuantity >= 100 && includeQuantity < 150) {
+            quantityPrice = 0.15;
+        }
+        else if (includeQuantity >= 150 && includeQuantity < 200) {
+            quantityPrice = 0.20;
+        }   
+        else if (includeQuantity >= 200 && includeQuantity < 250) {
+            quantityPrice = 0.27;
+        }
+        else {
+            quantityPrice = 0.32;
+        }
     }
-    else if (includeQuantity >= 25 && includeQuantity < 50) {
-        quantityPrice = 0.05;
+
+    if (getSizePrice() === 1.4) {
+        if (includeQuantity < 25){
+            quantityPrice = 0;
+        }
+        else if (includeQuantity >= 25 && includeQuantity < 50) {
+            quantityPrice = 0.25;
+        }
+        else if (includeQuantity >= 50 && includeQuantity < 100) {
+            quantityPrice = 0.38;
+        }
+        else if (includeQuantity >= 100 && includeQuantity < 150) {
+            quantityPrice = 0.44;
+        }
+        else if (includeQuantity >= 150 && includeQuantity < 200) {
+            quantityPrice = 0.49;
+        }   
+        else if (includeQuantity >= 200 && includeQuantity < 250) {
+            quantityPrice = 0.54;
+        }
+        else {
+            quantityPrice = 0.61;
+        }
     }
-    else if (includeQuantity >= 50 && includeQuantity < 100) {
-        quantityPrice = 0.10;
+
+    if (getSizePrice() === 1.69) {
+        if (includeQuantity < 25){
+            quantityPrice = 0;
+        }
+        else if (includeQuantity >= 25 && includeQuantity < 50) {
+            quantityPrice = 0.27;
+        }
+        else if (includeQuantity >= 50 && includeQuantity < 100) {
+            quantityPrice = 0.35;
+        }
+        else if (includeQuantity >= 100 && includeQuantity < 150) {
+            quantityPrice = 0.44;
+        }
+        else if (includeQuantity >= 150 && includeQuantity < 200) {
+            quantityPrice = 0.49;
+        }   
+        else if (includeQuantity >= 200 && includeQuantity < 250) {
+            quantityPrice = 0.54;
+        }
+        else {
+            quantityPrice = 0.61;
+        }
     }
-    else if (includeQuantity >= 100 && includeQuantity < 150) {
-        quantityPrice = .15;
-    }
-    else if (includeQuantity >= 150 && includeQuantity < 200) {
-        quantityPrice = .20;
-    }   
-    else if (includeQuantity >= 200 && includeQuantity < 250) {
-        quantityPrice = .27;
-    }
-    else {
-        quantityPrice = .32;
-    }
-    
+
     //finally we return the quantityPrice
     return quantityPrice;
 }

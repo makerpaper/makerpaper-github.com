@@ -602,11 +602,19 @@ footer a {
 
 .individual-product .banner {
     display: flex;
-    margin-bottom: 110px;
 }
 
-.individual-product .banner .text {
-    max-width: 380px;
+@media (min-width: 520px) {
+    .individual-product .banner {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .art-prints .banner, 
+    .greeting-cards .banner,
+    .cover-books .banner {
+        padding-bottom: 28px;
+    }
 }
 
 .individual-product nav {
@@ -621,7 +629,6 @@ footer a {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 40%;
 }
 
 .individual-product .sign-up p {
@@ -663,10 +670,48 @@ footer a {
         background: url('../img/products/card-mockup.png') transparent no-repeat;
     }
 
+    .art-prints .banner:after {
+        display: block;
+        width: 430px;
+        height: 430px;
+        margin: 0 auto;
+        background: url('../img/products/art-print-mockup.png') transparent no-repeat;
+    }
+
+    .cover-books .banner:after {
+        display: block;
+        width: 430px;
+        height: 430px;
+        margin: 0 auto;
+        background: url('../img/products/cover-book-mockup.png') transparent no-repeat;
+    }
+
+    .perfect-notebooks .banner:after {
+        display: block;
+        width: 430px;
+        height: 430px;
+        margin: 0 auto;
+        background: url('../img/products/perfectbound-nb-mockup.png') transparent no-repeat;
+    }
+
+    .wire-notebooks .banner:after {
+        display: block;
+        width: 430px;
+        height: 430px;
+        margin: 0 auto;
+        background: url('../img/products/wirebound-notebook-mockup.png') transparent no-repeat;
+    }
+
     .individual-product .banner .text {
         margin: 0 auto;
     }
 
+}
+
+@media (max-width: 520px) {
+    .individual-product .banner:after {
+        width: 100%;
+    }
 }
 
 .pricing {
@@ -723,7 +768,7 @@ footer a {
 }
 
 .product-card img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .product-card p {
