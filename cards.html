@@ -25,6 +25,7 @@
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="js/cardformcalculations.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
 
@@ -33,7 +34,7 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
 
 </head>
-<body id="cards">
+<body class="individual-product">
 
   <!-- NAVIGATION
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -70,18 +71,39 @@
   </div>
 
 
-      <!-- PRODUCTS
+      <!-- PRICING
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="section pricing-section">
     <div class="container">
       <div class="row pricing">
-        <div class="one-third text">
-            <h2>Pricing</h2>
-            <p>ACTUAL PRICE</p>
-        </div>
-        <div class="two-thirds">
-          <form></form>
-        </div>
+        <h2 class="text">Pricing</h2>
+        <form action="" id="pricing-form" >
+          <p class="price-container"><span id="totalPrice">$0</span> / card</p>
+          <div>
+            <label class="border-bottom" for="size">Size</label>
+            <select id="size" name='size' onchange="calculateTotal()">
+            <option value="Pick a Size" selected>Pick a Size</option>
+            <option value="A2">5.5" x 4.25" (A2)</option>
+            <option value="A6">6.25" x 4.63" (A6)</option>
+            <option value="A7">7" x 5.13" (A7)</option>
+          </select>
+          </div>
+          <div>
+            <label class="border-bottom" for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" value="0" onchange="calculateTotal()" min="1" />
+          </div>
+          <div class="additional-options">
+            <p class="border-bottom">Additional Options</p>
+            <div>
+              <label for='envelopes'>Envelopes</label>
+              <input type="checkbox" id="envelopes" name='envelopes' onclick="calculateTotal()" />
+            </div>
+            <div>
+              <label for='includeCellophane'>Cellophane<br />Wrap</label>
+              <input type="checkbox" id="includeCellophane" name="includeCellophane" onclick="calculateTotal()" />
+            </div>
+          </div>
+         </form>
       </div>
     </div>
   </div>
@@ -90,12 +112,12 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div id="anchor-button" class="section sign-up">
       <div class="container">
-        <h2 class="section-heading">Want To Feel For Yourself?</h2>
+        <h2 class="products-section-heading">Want To Feel For Yourself?</h2>
         <p>Fill out the form below, and we’ll be in touch to send you a sample pack of our most popular products.</p>
         <p>Our sample packs include one A7 greeting card, a 5x7 art print, and a perfect-bound notebook.</p>
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup">
-        <form action="https://makerpaper.us19.list-manage.com/subscribe/post?u=ca46937b18cbc288c2a882802&amp;id=a25d7d9f30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <form action="https://makerpaper.us19.list-manage.com/subscribe/post?u=ca46937b18cbc288c2a882802&amp;id=9ed2173a92" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
           <!-- <h2>Subscribe to our mailing list</h2> -->
         <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
@@ -128,14 +150,54 @@
             <div class="response" id="mce-error-response" style="display:none"></div>
             <div class="response" id="mce-success-response" style="display:none"></div>
           </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ca46937b18cbc288c2a882802_a25d7d9f30" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-primary"></div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ca46937b18cbc288c2a882802_9ed2173a92" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Sign Up" name="Sign Up" id="mc-embedded-subscribe" class="button button-primary"></div>
             </div>
         </form>
         </div>
         <!--End mc_embed_signup-->
       </div>
   </div>
+
+        <!-- OTHER PRODUCTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <h3>Check out other products</h3>
+        <div class="one-third column product-card product-card-margin">
+          <img src="img/products/card-mockup.png" alt="card mockup"/>
+          <p>Cards</p>
+          <ul>
+            <li>Printed on Premium #150 Paper</li>
+            <li>Available in five sizes</li>
+            <li>Starts at just $6</li>
+          </ul>
+          <a href="cards.html">View Pricing <span>></span></a>
+        </div>
+        <div class="one-third column product-card">
+          <img src="img/products/wirebound-notebook-mockup.png" alt="card mockup"/>
+          <p>Notebooks</p>
+          <ul>
+            <li>Printed on Premium #150 Paper</li>
+            <li>Available in five sizes</li>
+            <li>Starts at just $6</li>
+          </ul>
+          <a href="cards.html">View Pricing <span>></span></a>
+        </div>
+        <div class="one-third column product-card">
+          <img src="img/products/cover-book-mockup.png" alt="card mockup"/>
+          <p>Cover Books</p>
+          <ul>
+            <li>Printed on Premium #150 Paper</li>
+            <li>Available in five sizes</li>
+            <li>Starts at just $6</li>
+          </ul>
+          <a href="cards.html">View Pricing <span>></span></a>
+        </div>
+      </div>
+    </div>
+  </div>  
 
       <!-- FOOTER
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
