@@ -1,7 +1,7 @@
  var size_prices= new Array();
- size_prices["A2"]=1.35;
- size_prices["A6"]=1.4;
- size_prices["A7"]=1.69;
+ size_prices["A2"]=0.75;
+ size_prices["A6"]=1.30;
+ size_prices["A7"]=1.30;
 
 function getSizePrice()
 {
@@ -28,123 +28,87 @@ function quantityPrice()
     var includeQuantity = theForm.elements["quantity"].value;
     //If they checked the box set quantityPrice to 20
 
-    if (getSizePrice() === 1.35) {
+    if (getSizePrice() === 0.75) {
         if (includeQuantity < 25){
             quantityPrice = 0;
         }
         else if (includeQuantity >= 25 && includeQuantity < 50) {
-            quantityPrice = 0.05;
+            quantityPrice = 0.01;
         }
         else if (includeQuantity >= 50 && includeQuantity < 100) {
-            quantityPrice = 0.10;
+            quantityPrice = 0.06;
         }
         else if (includeQuantity >= 100 && includeQuantity < 150) {
-            quantityPrice = 0.15;
+            quantityPrice = 0.12;
         }
         else if (includeQuantity >= 150 && includeQuantity < 200) {
-            quantityPrice = 0.20;
+            quantityPrice = 0.18;
         }   
         else if (includeQuantity >= 200 && includeQuantity < 250) {
-            quantityPrice = 0.27;
-        }
-        else {
-            quantityPrice = 0.32;
-        }
-    }
-
-    if (getSizePrice() === 1.4) {
-        if (includeQuantity < 25){
-            quantityPrice = 0;
-        }
-        else if (includeQuantity >= 25 && includeQuantity < 50) {
             quantityPrice = 0.25;
         }
-        else if (includeQuantity >= 50 && includeQuantity < 100) {
-            quantityPrice = 0.38;
-        }
-        else if (includeQuantity >= 100 && includeQuantity < 150) {
-            quantityPrice = 0.44;
-        }
-        else if (includeQuantity >= 150 && includeQuantity < 200) {
-            quantityPrice = 0.49;
-        }   
-        else if (includeQuantity >= 200 && includeQuantity < 250) {
-            quantityPrice = 0.54;
-        }
         else {
-            quantityPrice = 0.61;
+            quantityPrice = 0.31;
         }
     }
 
-    if (getSizePrice() === 1.69) {
+    if (getSizePrice() === 1.30) {
         if (includeQuantity < 25){
             quantityPrice = 0;
         }
         else if (includeQuantity >= 25 && includeQuantity < 50) {
-            quantityPrice = 0.27;
+            quantityPrice = 0.17;
         }
         else if (includeQuantity >= 50 && includeQuantity < 100) {
-            quantityPrice = 0.35;
+            quantityPrice = 0.30;
         }
         else if (includeQuantity >= 100 && includeQuantity < 150) {
-            quantityPrice = 0.44;
+            quantityPrice = 0.48;
         }
         else if (includeQuantity >= 150 && includeQuantity < 200) {
-            quantityPrice = 0.49;
+            quantityPrice = 0.54;
         }   
         else if (includeQuantity >= 200 && includeQuantity < 250) {
-            quantityPrice = 0.54;
+            quantityPrice = 0.56;
         }
         else {
-            quantityPrice = 0.61;
+            quantityPrice = 0.59;
+        }
+    }
+
+    if (getSizePrice() === 1.30) {
+        if (includeQuantity < 25){
+            quantityPrice = 0;
+        }
+        else if (includeQuantity >= 25 && includeQuantity < 50) {
+            quantityPrice = 0.17;
+        }
+        else if (includeQuantity >= 50 && includeQuantity < 100) {
+            quantityPrice = 0.30;
+        }
+        else if (includeQuantity >= 100 && includeQuantity < 150) {
+            quantityPrice = 0.48;
+        }
+        else if (includeQuantity >= 150 && includeQuantity < 200) {
+            quantityPrice = 0.54;
+        }   
+        else if (includeQuantity >= 200 && includeQuantity < 250) {
+            quantityPrice = 0.56;
+        }
+        else {
+            quantityPrice = 0.59;
         }
     }
 
     //finally we return the quantityPrice
     return quantityPrice;
 }
-
-//envelopesPrice() finds the envelopes price based on a check box selection
-function envelopesPrice()
-{
-    var envelopesPrice=0;
-    //Get a reference to the form id="pricing-form"
-    var theForm = document.forms["pricing-form"];
-    //Get a reference to the checkbox id="envelopes"
-    var includeEnvelopes = theForm.elements["envelopes"];
-
-    //If they checked the box set envelopesPrice to 5
-    if(includeEnvelopes.checked==true)
-    {
-        envelopesPrice=.20;
-    }
-    //finally we return the envelopesPrice
-    return envelopesPrice;
-}
-
-//cellPrice() finds the cellophane price based on a check box selection
-function cellPrice()
-{
-    var cellPrice=0;
-    //Get a reference to the form id="pricing-form"
-    var theForm = document.forms["pricing-form"];
-    //Get a reference to the checkbox id="includeCellophane"
-    var includeCellophane = theForm.elements["includeCellophane"];
-    
-    //If they checked the box set cellPrice to 5
-    if(includeCellophane.checked==true)
-    {
-        cellPrice=.10;
-    }
-    //finally we return the cellPrice
-    return cellPrice;
-}
         
 function calculateTotal()
 {
     //Here we get the total price by calling our function
-    //Each function returns a number so by calling them we add the values they return together
-    var totalCost = getSizePrice() - quantityPrice() + envelopesPrice() + cellPrice();
+    // var totalCost = getSizePrice() - quantityPrice() + envelopesPrice() + cellPrice();
+    var totalCost = getSizePrice() - quantityPrice();
     totalCost = Math.round(100*totalCost)/100;
     //display the result
     var result = document.getElementById('totalPrice');
