@@ -62,6 +62,10 @@ nav {
     box-shadow: 0px 0px 8px 2px $wheat;
     margin-bottom: 110px;
 
+    .nav-link-logo {
+        z-index: 2;
+    }
+
     ul {
         position: absolute;
         right: 10px;
