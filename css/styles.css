@@ -639,7 +639,7 @@ footer a {
     background: url("../img/products/card-mockup.png") transparent no-repeat;
   }
   .individual-product .banner .text {
-    margin: 0 auto;
+    display: contents;
   }
 
   .art-prints .banner:after {
