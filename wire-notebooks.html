@@ -26,6 +26,8 @@
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="js/wirenotebookcalculations.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script src="js/smooth-scrolling.js" defer></script>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -37,7 +39,7 @@
   <!-- NAVIGATION
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <nav class="twelve columns">
-    <a href="index.html">
+    <a href="index.html" class="nav-link-logo">
       <svg class="logo" width="160px" height="57px" viewBox="0 0 160 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs></defs>
           <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -54,6 +56,7 @@
       <li><a class="form" href="#anchor-button">Get Started</a></li>
     </ul>
   </nav>
+
 
       <!-- BANNER
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -122,13 +125,12 @@
           <label class="platform-question" for="mce-MMERGE5">What E-commerce Platform Do You Use?  <span class="asterisk">*</span>
         </label>
           <select name="MMERGE5" class="required dropdown" id="mce-MMERGE5">
-          <option value=""></option>
-          <option value="Etsy">Etsy</option>
-        <option value="Squarespace">Squarespace</option>
-        <option value="WooCommerce">WooCommerce</option>
-        <option value="BigCartel">BigCartel</option>
-        <option value="Other">Other</option>
-        </select>
+            <option value="Etsy">Etsy</option>
+            <option value="Squarespace">Squarespace</option>
+            <option value="WooCommerce">WooCommerce</option>
+            <option value="BigCartel">BigCartel</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
           <div id="mce-responses" class="clear">
             <div class="response" id="mce-error-response" style="display:none"></div>
